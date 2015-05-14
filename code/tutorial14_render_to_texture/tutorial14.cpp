@@ -159,16 +159,16 @@ int main( void )
 	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 1024, 768);
 	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthrenderbuffer);
 
-	//// Alternative : Depth texture. Slower, but you can sample it later in your shader
-	//GLuint depthTexture;
-	//glGenTextures(1, &depthTexture);
-	//glBindTexture(GL_TEXTURE_2D, depthTexture);
-	//glTexImage2D(GL_TEXTURE_2D, 0,GL_DEPTH_COMPONENT24, 1024, 768, 0,GL_DEPTH_COMPONENT, GL_FLOAT, 0);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); 
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	//glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthTexture, 0);
+	// Alternative : Depth texture. Slower, but you can sample it later in your shader
+	GLuint depthTexture;
+	glGenTextures(1, &depthTexture);
+	glBindTexture(GL_TEXTURE_2D, depthTexture);
+	glTexImage2D(GL_TEXTURE_2D, 0,GL_DEPTH_COMPONENT24, 1024, 768, 0,GL_DEPTH_COMPONENT, GL_FLOAT, 0);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); 
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthTexture, 0);
 
 
 	// Set "renderedTexture" as our colour attachement #0
@@ -200,8 +200,7 @@ int main( void )
 	GLuint quad_programID = LoadShaders( "Passthrough.vertexshader", "WobblyTexture.fragmentshader" );
 	GLuint quad_vertexPosition_modelspace = glGetAttribLocation(quad_programID, "vertexPosition_modelspace");
 	GLuint texID = glGetUniformLocation(quad_programID, "renderedTexture");
-	GLuint timeID = glGetUniformLocation(quad_programID, "time");
-
+    GLuint timeID = glGetUniformLocation(quad_programID, "time");
 
 	
 	do{

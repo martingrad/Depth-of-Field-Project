@@ -53,8 +53,6 @@ void computeMatricesFromInputs(){
 	// Compute new orientation
 	horizontalAngle += mouseSpeed * float(1024/2 - xpos );
 	verticalAngle   += mouseSpeed * float( 768/2 - ypos );
-    
-    std::cout << "horizontalAngle: " << horizontalAngle << std::endl;
 
 	// Direction : Spherical coordinates to Cartesian coordinates conversion
 	glm::vec3 direction(
