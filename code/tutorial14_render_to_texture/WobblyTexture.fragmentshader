@@ -1,14 +1,9 @@
 #version 120
 
-//varying vec2 UV;
-
-//uniform sampler2D renderedTexture;
-//uniform float time;
-//uniform int depthInt;
-
-//void main(){
-//	gl_FragColor = texture2D( renderedTexture, UV + 0.1 * gl_FragDepth*vec2( sin(time+1024.0*UV.x),cos(time+768.0*UV.y)) ) ;
-//}
+/**
+ * Bokeh effect shader. Taken from
+ * http://devlog-martinsh.blogspot.se/2011/11/glsl-depth-of-field-with-bokeh-v21.html
+ */
 
 varying vec2 UV;
 uniform float time;
