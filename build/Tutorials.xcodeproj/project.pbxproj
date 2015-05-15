@@ -8363,7 +8363,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk;
+				SDKROOT = macosx10.10;
 				SYMROOT = "/Users/martingrad/Documents/LiTH/TNCG14/Depth-of-Field-Project/build/build";
 			};
 			name = Debug;
@@ -11329,7 +11329,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk;
+				SDKROOT = macosx10.10;
 				SYMROOT = "/Users/martingrad/Documents/LiTH/TNCG14/Depth-of-Field-Project/build/build";
 			};
 			name = Release;
@@ -12198,7 +12198,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk;
+				SDKROOT = macosx10.10;
 				SYMROOT = "/Users/martingrad/Documents/LiTH/TNCG14/Depth-of-Field-Project/build/build";
 			};
 			name = MinSizeRel;
@@ -12471,7 +12471,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk;
+				SDKROOT = macosx10.10;
 				SYMROOT = "/Users/martingrad/Documents/LiTH/TNCG14/Depth-of-Field-Project/build/build";
 			};
 			name = RelWithDebInfo;

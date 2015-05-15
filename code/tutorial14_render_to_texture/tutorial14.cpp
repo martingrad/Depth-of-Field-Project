@@ -54,7 +54,7 @@ int main( void )
 	glfwSetCursorPos(window, 1024/2, 768/2);
 
 	// Dark blue background
-	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+	glClearColor(0.0f, 0.0f, 0.3f, 0.0f);
 
 	// Enable depth test
 	glEnable(GL_DEPTH_TEST);
@@ -87,8 +87,8 @@ int main( void )
 	std::vector<glm::vec3> vertices;
 	std::vector<glm::vec2> uvs;
 	std::vector<glm::vec3> normals;
-	bool res = loadOBJ("step_00.obj", vertices, uvs, normals);
-    //res = loadOBJ("suzanne.obj", vertices, uvs, normals);
+	//bool res = loadOBJ("step_00.obj", vertices, uvs, normals);
+    bool res = loadOBJ("suzanne.obj", vertices, uvs, normals);
 
 
 	std::vector<unsigned short> indices;
@@ -304,7 +304,6 @@ int main( void )
 		glDisableVertexAttribArray(vertexNormal_modelspaceID);
 
 
-
 		// Render to the screen
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		glViewport(0,0,1024 * 2.0, 768 * 2.0); // Render on the whole framebuffer, complete from the lower left corner to the upper right
@@ -339,7 +338,6 @@ int main( void )
 		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
 
 		glDisableVertexAttribArray(0);
-
 
 		// Swap buffers
 		glfwSwapBuffers(window);
