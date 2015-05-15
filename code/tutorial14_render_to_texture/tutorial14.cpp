@@ -87,8 +87,8 @@ int main( void )
 	std::vector<glm::vec3> vertices;
 	std::vector<glm::vec2> uvs;
 	std::vector<glm::vec3> normals;
-	bool res = loadOBJ("suzanne.obj", vertices, uvs, normals);
-    res = loadOBJ("suzanne.obj", vertices, uvs, normals);
+	bool res = loadOBJ("step_00.obj", vertices, uvs, normals);
+    //res = loadOBJ("suzanne.obj", vertices, uvs, normals);
 
 
 	std::vector<unsigned short> indices;
@@ -204,13 +204,26 @@ int main( void )
 	GLuint texID = glGetUniformLocation(quad_programID, "renderedTexture");
     GLuint timeID = glGetUniformLocation(quad_programID, "time");
 
+    // For speed computation
+    double lastTime = glfwGetTime();
+    int nbFrames = 0;
 	
 	do{
+        
+        // Measure speed
+        double currentTime = glfwGetTime();
+        nbFrames++;
+        if ( currentTime - lastTime >= 1.0 ){ // If last prinf() was more than 1sec ago
+            // printf and reset
+            printf("%f ms/frame\n", 1000.0/double(nbFrames));
+            nbFrames = 0;
+            lastTime += 1.0;
+        }
 
 		// Render to our framebuffer
 		glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
 		glViewport(0,0,1024 * 2.0, 768 * 2.0); // Render on the whole framebuffer, complete from the lower left corner to the upper right
-
+        
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
