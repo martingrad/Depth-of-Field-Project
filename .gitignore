@@ -12,3 +12,4 @@ OpenGL-tutorial_v*
 **.mtl
 .DS_Store
 *.o
+code/tutorial14_render_to_texture/tutorial14_render_to_texture
