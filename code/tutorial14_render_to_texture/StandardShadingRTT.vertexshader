@@ -1,5 +1,7 @@
 #version 120
 
+// Vertex shader
+
 // Input vertex data, different for all executions of this shader.
 attribute vec3 vertexPosition_modelspace;
 attribute vec2 vertexUV;
