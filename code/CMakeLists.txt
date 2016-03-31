@@ -1,6 +1,6 @@
 # CMake entry point
 cmake_minimum_required (VERSION 2.6)
-project (Tutorials)
+project (DepthOfField)
 
 find_package(OpenGL REQUIRED)
 
