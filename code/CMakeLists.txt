@@ -57,8 +57,8 @@ add_definitions(
 
 
 # Tutorial 14
-add_executable(tutorial14_render_to_texture
-	tutorial14_render_to_texture/tutorial14.cpp
+add_executable(Depth-of-Field
+	Depth-of-Field/main.cpp
 	common/shader.cpp
 	common/shader.hpp
 	common/controls.cpp
@@ -72,17 +72,17 @@ add_executable(tutorial14_render_to_texture
 	common/text2D.hpp
 	common/text2D.cpp
 	
-	tutorial14_render_to_texture/StandardShadingRTT.vertexshader
-	tutorial14_render_to_texture/StandardShadingRTT.fragmentshader
-	tutorial14_render_to_texture/Passthrough.vertexshader
-	tutorial14_render_to_texture/WobblyTexture.fragmentshader
+	Depth-of-Field/StandardShadingRTT.vertexshader
+	Depth-of-Field/StandardShadingRTT.fragmentshader
+	Depth-of-Field/Passthrough.vertexshader
+	Depth-of-Field/WobblyTexture.fragmentshader
 )
-target_link_libraries(tutorial14_render_to_texture
+target_link_libraries(Depth-of-Field
 	${ALL_LIBS}
 )
 # Xcode and Visual working directories
-set_target_properties(tutorial14_render_to_texture PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tutorial14_render_to_texture/")
-create_target_launcher(tutorial14_render_to_texture WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tutorial14_render_to_texture/")
+set_target_properties(Depth-of-Field PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Depth-of-Field/")
+create_target_launcher(Depth-of-Field WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Depth-of-Field/")
 
 
 
@@ -95,8 +95,8 @@ SOURCE_GROUP(shaders REGULAR_EXPRESSION ".*/.*shader$" )
 if (NOT ${CMAKE_GENERATOR} MATCHES "Xcode" )
 
 add_custom_command(
-   TARGET tutorial14_render_to_texture POST_BUILD
-   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/tutorial14_render_to_texture${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/tutorial14_render_to_texture/"
+   TARGET Depth-of-Field POST_BUILD
+   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/Depth-of-Field${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/Depth-of-Field/"
 )
 elseif (${CMAKE_GENERATOR} MATCHES "Xcode" )
 
